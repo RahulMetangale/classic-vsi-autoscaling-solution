@@ -40,14 +40,14 @@ As illustrated in the following figure, the auto-scale solution can be described
 
 | **Name** | **Version** |
 | --- | --- |
-| terraform |  >= 0.13 |
+| terraform |  >= 1.4.6 |
 
 ### Providers
 
 | **Name** | **Version** |
 | --- | --- |
-| ibm |  >= 1.21.0 |
-| sysdig |  >= 0.5.7 |
+| ibm |  >= 1.53.0|
+| sysdig |  >= 1.6.0 |
 
 ### Modules
 

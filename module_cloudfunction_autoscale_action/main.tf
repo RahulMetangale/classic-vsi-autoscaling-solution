@@ -2,11 +2,10 @@ terraform {
   required_providers {
     ibm = {
       source = "IBM-Cloud/ibm"
-      version = "1.21.0"
+      version = "1.53.0"
     }
   }
 }
-
 
 locals{
     user_defined_parameters = <<EOF

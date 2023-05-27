@@ -1,4 +1,15 @@
-
+terraform {
+  required_providers {
+    ibm = {
+      source = "IBM-Cloud/ibm"
+      version = "1.53.0"
+    }
+    sysdig = {
+      source = "sysdiglabs/sysdig"
+      version = "1.6.0"
+    }
+  }
+}
 resource "sysdig_monitor_alert_metric" "scale_up_alert" {
   count = length(var.scale_up_alerts_config)
   name        =  "${var.scale_up_alert_name}-${count.index}"
