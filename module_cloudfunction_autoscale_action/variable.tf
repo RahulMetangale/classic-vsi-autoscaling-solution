@@ -1,7 +1,3 @@
-
-variable "namespace" {
-}
-
 variable "action_name" {
 }
 
