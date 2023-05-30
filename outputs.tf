@@ -16,4 +16,5 @@ output "health_monitors" {
 
 output "sysdig_dashboard_url" {
   value = module.sysdig_monitoring_config.sysdig_dashboard_url
+  sensitive = true
 }
