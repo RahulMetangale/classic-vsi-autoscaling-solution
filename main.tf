@@ -12,7 +12,7 @@ module "vms_and_lb"{
 module "cloud_function" {
   source = "./module_cloudfunction_autoscale_action"
   minimum_vm_count = var.minimum_vm_count
-  namespace = var.namespace
+  namespace = "demo"
   action_name = var.action_name
   api_key = var.api_key
   workspace_id = module.vms_and_lb.workspace_id
