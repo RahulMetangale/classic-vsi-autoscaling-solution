@@ -32,7 +32,7 @@ EOF
 
 resource "ibm_function_action" "action" {
   name = var.action_name
-  namespace = var.namespace  
+  namespace = "demo" 
 
   exec {
     kind = "python:3.7"
