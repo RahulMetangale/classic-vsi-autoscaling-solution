@@ -22,6 +22,7 @@ module "sysdig_monitoring_config" {
   notification_channel_webhook_url = module.cloud_function.cloud_function_target_endpoint_url
 }
 
+/*
 module "cloud_function" {
   source = "./module_cloudfunction_autoscale_action"
   minimum_vm_count = var.minimum_vm_count
@@ -31,3 +32,4 @@ module "cloud_function" {
   workspace_id = module.vms_and_lb.workspace_id
   vm_count = var.vm_count
 }
+*/
