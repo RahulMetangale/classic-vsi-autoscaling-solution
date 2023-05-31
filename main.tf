@@ -19,7 +19,7 @@ module "sysdig_monitoring_config" {
   scale_up_alerts_config = var.scale_up_alerts_config
   scaledown_lower_threshold = var.scaledown_lower_threshold 
   scaledown_upper_threshold = var.scaledown_upper_threshold
-  notification_channel_webhook_url = module.cloud_function.cloud_function_target_endpoint_url
+  notification_channel_webhook_url = "https://us-east.functions.appdomain.cloud/api/v1/web/8d4aff83-9ed7-449d-b888-9e5f92e5de8f/default/autoscaleaction"
 }
 
 /*

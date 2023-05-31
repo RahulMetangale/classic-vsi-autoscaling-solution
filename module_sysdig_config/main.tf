@@ -24,7 +24,7 @@ resource "sysdig_monitor_notification_channel_webhook" "cf_webhook_channel" {
   count = length(var.scale_up_alerts_config)
   name                    = "Cloud-Function-Scale-Up-Webhook-${count.index}"
   enabled                 = true
-  url                     = "${var.notification_channel_webhook_url}?vmcount=+2"
+  url                     = "https://us-east.functions.appdomain.cloud/api/v1/web/8d4aff83-9ed7-449d-b888-9e5f92e5de8f/default/autoscaleaction?vmcount=+2"
   notify_when_ok          = false
   notify_when_resolved    = false
   send_test_notification  = false
@@ -42,7 +42,7 @@ resource "sysdig_monitor_alert_metric" "scale_down_alert" {
 resource "sysdig_monitor_notification_channel_webhook" "cf_webhook_scaledown_channel" {
     name                    = "Cloud-Function-Scale-Down-Webhook"
     enabled                 = true
-    url                     = "${var.notification_channel_webhook_url}?vmcount=-2"
+    url                     = "https://us-east.functions.appdomain.cloud/api/v1/web/8d4aff83-9ed7-449d-b888-9e5f92e5de8f/default/autoscaleaction?vmcount=-2"
     notify_when_ok          = false
     notify_when_resolved    = false
     send_test_notification  = false
