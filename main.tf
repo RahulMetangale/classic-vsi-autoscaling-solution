@@ -9,16 +9,6 @@ module "vms_and_lb"{
   instance_count = var.instance_count
 }
 
-module "cloud_function" {
-  source = "./module_cloudfunction_autoscale_action"
-  minimum_vm_count = var.minimum_vm_count
-  namespace = "demo"
-  action_name = var.action_name
-  api_key = var.api_key
-  workspace_id = module.vms_and_lb.workspace_id
-  vm_count = var.vm_count
-}
-
 module "sysdig_monitoring_config" {
   source = "./module_sysdig_config"
   resource_group_name = var.resource_group_name
@@ -30,4 +20,14 @@ module "sysdig_monitoring_config" {
   scaledown_lower_threshold = var.scaledown_lower_threshold 
   scaledown_upper_threshold = var.scaledown_upper_threshold
   notification_channel_webhook_url = module.cloud_function.cloud_function_target_endpoint_url
+}
+
+module "cloud_function" {
+  source = "./module_cloudfunction_autoscale_action"
+  minimum_vm_count = var.minimum_vm_count
+  namespace = "demo"
+  action_name = var.action_name
+  api_key = var.api_key
+  workspace_id = module.vms_and_lb.workspace_id
+  vm_count = var.vm_count
 }
