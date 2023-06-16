@@ -98,3 +98,7 @@ variable "scaledown_upper_threshold"{
 variable "number_of_scale_up_alerts" {
     default = 3
 }
+
+variable "TF_LOG" {
+  default = "debug"
+}
